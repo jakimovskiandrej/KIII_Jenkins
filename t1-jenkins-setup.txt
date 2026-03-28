@@ -1,0 +1,112 @@
+PS C:\Users\Hp\Desktop\KIII_2026\solutions\act-14-jenkins-github-gitlab-lab> notepad docker-compose.yml
+PS C:\Users\Hp\Desktop\KIII_2026\solutions\act-14-jenkins-github-gitlab-lab> docker compose up -d
+time="2026-03-28T08:01:10+01:00" level=warning msg="C:\\Users\\Hp\\Desktop\\KIII_2026\\solutions\\act-14-jenkins-github-gitlab-lab\\docker-compose.yml: `version` is obsolete"
+[+] Running 14/2
+ ✔ jenkins-blueocean Pulled                                                                                                                      62.3s 
+ ✔ jenkins Pulled                                                                                                                                62.3s 
+[+] Running 5/5
+ ✔ Network act-14-jenkins-github-gitlab-lab_default             Created                                                                           0.1s 
+ ✔ Volume "act-14-jenkins-github-gitlab-lab_jenkins_blueocean"  Created                                                                           0.1s 
+ ✔ Volume "act-14-jenkins-github-gitlab-lab_jenkins_home"       Created                                                                           0.0s 
+ ✔ Container jenkins-blueocean                                  Started                                                                           1.8s 
+ ✔ Container jenkins                                            Started                                                                           1.8s 
+PS C:\Users\Hp\Desktop\KIII_2026\solutions\act-14-jenkins-github-gitlab-lab> docker compose ps
+time="2026-03-28T08:02:38+01:00" level=warning msg="C:\\Users\\Hp\\Desktop\\KIII_2026\\solutions\\act-14-jenkins-github-gitlab-lab\\docker-compose.yml: `version` is obsolete"
+NAME                IMAGE                 COMMAND                  SERVICE             CREATED          STATUS          PORTS
+jenkins             jenkins/jenkins:lts   "/usr/bin/tini -- /u…"   jenkins             25 seconds ago   Up 23 seconds   0.0.0.0:8080->8080/tcp, 50000/tcp
+jenkins-blueocean   jenkins/jenkins:lts   "/usr/bin/tini -- /u…"   jenkins-blueocean   25 seconds ago   Up 23 seconds   50000/tcp, 0.0.0.0:8081->8080/tcp
+PS C:\Users\Hp\Desktop\KIII_2026\solutions\act-14-jenkins-github-gitlab-lab> docker compose logs
+time="2026-03-28T08:02:48+01:00" level=warning msg="C:\\Users\\Hp\\Desktop\\KIII_2026\\solutions\\act-14-jenkins-github-gitlab-lab\\docker-compose.yml: `version` is obsolete"
+jenkins-blueocean  | Running from: /usr/share/jenkins/jenkins.war
+jenkins            | Running from: /usr/share/jenkins/jenkins.war
+jenkins            | webroot: /var/jenkins_home/war
+jenkins-blueocean  | webroot: /var/jenkins_home/war
+jenkins-blueocean  | 2026-03-28 07:02:17.526+0000 [id=1]        INFO    winstone.Logger#logInternal: Beginning extraction from war file
+jenkins            | 2026-03-28 07:02:17.535+0000 [id=1]        INFO    winstone.Logger#logInternal: Beginning extraction from war file
+jenkins-blueocean  | 2026-03-28 07:02:19.307+0000 [id=1]        WARNING o.e.j.ee9.nested.ContextHandler#setContextPath: Empty contextPath
+jenkins            | 2026-03-28 07:02:19.371+0000 [id=1]        WARNING o.e.j.ee9.nested.ContextHandler#setContextPath: Empty contextPath
+jenkins-blueocean  | 2026-03-28 07:02:19.501+0000 [id=1]        INFO    org.eclipse.jetty.server.Server#doStart: jetty-12.1.5; built: 2025-12-03T22:18:24.732Z; git: 4905d09d7b6801e792d7b73946cf7b66e4be25d6; jvm 21.0.9+10-LTS
+jenkins-blueocean  | 2026-03-28 07:02:20.715+0000 [id=1]        INFO    o.e.j.e.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.ee9.jsp.JettyJspServlet
+jenkins            | 2026-03-28 07:02:19.584+0000 [id=1]        INFO    org.eclipse.jetty.server.Server#doStart: jetty-12.1.5; built: 2025-12-03T22:18:24.732Z; git: 4905d09d7b6801e792d7b73946cf7b66e4be25d6; jvm 21.0.9+10-LTS
+jenkins-blueocean  | 2026-03-28 07:02:20.891+0000 [id=1]        INFO    o.e.j.s.DefaultSessionIdManager#doStart: Session workerName=node0
+jenkins-blueocean  | 2026-03-28 07:02:21.922+0000 [id=1]        INFO    hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+jenkins            | 2026-03-28 07:02:20.834+0000 [id=1]        INFO    o.e.j.e.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.ee9.jsp.JettyJspServlet
+jenkins-blueocean  | 2026-03-28 07:02:22.193+0000 [id=1]        INFO    o.e.j.s.handler.ContextHandler#doStart: Started oeje9n.ContextHandler$CoreContextHandler@3681037{Jenkins v2.541.3,/,b=file:///var/jenkins_home/war/,a=AVAILABLE,h=oeje9n.ContextHandler$CoreContextHandler$CoreToNestedHandler@2459319c{STARTED}}
+jenkins-blueocean  | 2026-03-28 07:02:22.271+0000 [id=1]        INFO    o.e.j.server.AbstractConnector#doStart: Started oejs.ServerConnector@2aa6311a{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+jenkins-blueocean  | 2026-03-28 07:02:22.272+0000 [id=1]        INFO    org.eclipse.jetty.server.Server#doStart: Started oejs.Server@2c0b4c83{STARTING}[12.1.5,sto=0] @2779ms
+jenkins            | 2026-03-28 07:02:21.019+0000 [id=1]        INFO    o.e.j.s.DefaultSessionIdManager#doStart: Session workerName=node0
+jenkins            | 2026-03-28 07:02:22.090+0000 [id=1]        INFO    hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+jenkins            | 2026-03-28 07:02:22.430+0000 [id=1]        INFO    o.e.j.s.handler.ContextHandler#doStart: Started oeje9n.ContextHandler$CoreContextHandler@3681037{Jenkins v2.541.3,/,b=file:///var/jenkins_home/war/,a=AVAILABLE,h=oeje9n.ContextHandler$CoreContextHandler$CoreToNestedHandler@2459319c{STARTED}}
+jenkins-blueocean  | 2026-03-28 07:02:22.279+0000 [id=40]       INFO    winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+jenkins            | 2026-03-28 07:02:22.485+0000 [id=1]        INFO    o.e.j.server.AbstractConnector#doStart: Started oejs.ServerConnector@680a88b4{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+jenkins            | 2026-03-28 07:02:22.487+0000 [id=1]        INFO    org.eclipse.jetty.server.Server#doStart: Started oejs.Server@4893b344{STARTING}[12.1.5,sto=0] @2913ms
+jenkins            | 2026-03-28 07:02:22.489+0000 [id=40]       INFO    winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+jenkins-blueocean  | 2026-03-28 07:02:22.804+0000 [id=39]       INFO    jenkins.model.Jenkins#<init>: Starting version 2.541.3
+jenkins            | 2026-03-28 07:02:22.970+0000 [id=39]       INFO    jenkins.model.Jenkins#<init>: Starting version 2.541.3
+jenkins-blueocean  | 2026-03-28 07:02:23.066+0000 [id=48]       INFO    jenkins.InitReactorRunner$1#onAttained: Started initialization
+jenkins-blueocean  | 2026-03-28 07:02:23.129+0000 [id=52]       INFO    jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+jenkins-blueocean  | 2026-03-28 07:02:26.942+0000 [id=60]       INFO    jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+jenkins-blueocean  | 2026-03-28 07:02:26.956+0000 [id=60]       INFO    jenkins.InitReactorRunner$1#onAttained: Started all plugins
+jenkins-blueocean  | 2026-03-28 07:02:26.961+0000 [id=47]       INFO    jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+jenkins-blueocean  | 2026-03-28 07:02:28.131+0000 [id=48]       INFO    jenkins.InitReactorRunner$1#onAttained: System config loaded
+jenkins-blueocean  | 2026-03-28 07:02:28.132+0000 [id=51]       INFO    jenkins.InitReactorRunner$1#onAttained: System config adapted
+jenkins-blueocean  | 2026-03-28 07:02:28.136+0000 [id=55]       INFO    jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+jenkins-blueocean  | 2026-03-28 07:02:28.148+0000 [id=55]       INFO    jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated     
+jenkins-blueocean  | 2026-03-28 07:02:28.439+0000 [id=75]       INFO    hudson.util.Retrier#start: Attempt #1 to do the action check updates server    
+jenkins            | 2026-03-28 07:02:23.236+0000 [id=48]       INFO    jenkins.InitReactorRunner$1#onAttained: Started initialization
+jenkins            | 2026-03-28 07:02:23.283+0000 [id=58]       INFO    jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+jenkins-blueocean  | 2026-03-28 07:02:30.789+0000 [id=58]       INFO    jenkins.install.SetupWizard#init:
+jenkins-blueocean  | [LF]>
+jenkins-blueocean  | [LF]> *************************************************************
+jenkins            | 2026-03-28 07:02:27.444+0000 [id=58]       INFO    jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+jenkins-blueocean  | [LF]> *************************************************************
+jenkins-blueocean  | [LF]> *************************************************************
+jenkins-blueocean  | [LF]>
+jenkins-blueocean  | [LF]> Jenkins initial setup is required. An admin user has been created and a password generated.
+jenkins            | 2026-03-28 07:02:27.470+0000 [id=57]       INFO    jenkins.InitReactorRunner$1#onAttained: Started all plugins
+jenkins            | 2026-03-28 07:02:27.474+0000 [id=55]       INFO    jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+jenkins-blueocean  | [LF]> Please use the following password to proceed to installation:
+jenkins            | 2026-03-28 07:02:28.861+0000 [id=54]       INFO    jenkins.InitReactorRunner$1#onAttained: System config loaded
+jenkins            | 2026-03-28 07:02:28.866+0000 [id=54]       INFO    jenkins.InitReactorRunner$1#onAttained: System config adapted
+jenkins-blueocean  | [LF]>
+jenkins            | 2026-03-28 07:02:28.874+0000 [id=58]       INFO    jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+jenkins-blueocean  | [LF]> 9fef19c122c34e75a0891378c0c49d90
+jenkins            | 2026-03-28 07:02:28.909+0000 [id=58]       INFO    jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated     
+jenkins-blueocean  | [LF]>
+jenkins-blueocean  | [LF]> This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+jenkins-blueocean  | [LF]>
+jenkins-blueocean  | [LF]> *************************************************************
+jenkins-blueocean  | [LF]> *************************************************************
+jenkins-blueocean  | [LF]> *************************************************************
+jenkins-blueocean  |
+jenkins-blueocean  | 2026-03-28 07:02:40.798+0000 [id=48]       INFO    jenkins.InitReactorRunner$1#onAttained: Completed initialization
+jenkins-blueocean  | 2026-03-28 07:02:40.892+0000 [id=39]       INFO    hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+jenkins-blueocean  | 2026-03-28 07:02:42.058+0000 [id=75]       INFO    h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+jenkins-blueocean  | 2026-03-28 07:02:42.059+0000 [id=75]       INFO    hudson.util.Retrier#start: Performed the action check updates server successfully at the attempt #1
+jenkins            | 2026-03-28 07:02:29.238+0000 [id=75]       INFO    hudson.util.Retrier#start: Attempt #1 to do the action check updates server    
+jenkins            | 2026-03-28 07:02:31.221+0000 [id=48]       INFO    jenkins.install.SetupWizard#init:
+jenkins            | [LF]>
+jenkins            | [LF]> *************************************************************
+jenkins            | [LF]> *************************************************************
+jenkins            | [LF]> *************************************************************
+jenkins            | [LF]>
+jenkins            | [LF]> Jenkins initial setup is required. An admin user has been created and a password generated.
+jenkins            | [LF]> Please use the following password to proceed to installation:
+jenkins            | [LF]>
+jenkins            | [LF]> c726ba9248eb43f29eb34bddeab1b803
+jenkins            | [LF]>
+jenkins            | [LF]> This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+jenkins            | [LF]>
+jenkins            | [LF]> *************************************************************
+jenkins            | [LF]> *************************************************************
+jenkins            | [LF]> *************************************************************
+jenkins            |
+jenkins            | 2026-03-28 07:02:41.684+0000 [id=55]       INFO    jenkins.InitReactorRunner$1#onAttained: Completed initialization
+jenkins            | 2026-03-28 07:02:41.778+0000 [id=39]       INFO    hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+jenkins            | 2026-03-28 07:02:42.876+0000 [id=75]       INFO    h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+jenkins            | 2026-03-28 07:02:42.877+0000 [id=75]       INFO    hudson.util.Retrier#start: Performed the action check updates server successfully at the attempt #1
+PS C:\Users\Hp\Desktop\KIII_2026\solutions\act-14-jenkins-github-gitlab-lab> docker compose ps
+time="2026-03-28T08:06:48+01:00" level=warning msg="C:\\Users\\Hp\\Desktop\\KIII_2026\\solutions\\act-14-jenkins-github-gitlab-lab\\docker-compose.yml: `version` is obsolete"
+NAME                IMAGE                 COMMAND                  SERVICE             CREATED         STATUS         PORTS
+jenkins             jenkins/jenkins:lts   "/usr/bin/tini -- /u…"   jenkins             4 minutes ago   Up 4 minutes   0.0.0.0:8080->8080/tcp, 50000/tcp
+jenkins-blueocean   jenkins/jenkins:lts   "/usr/bin/tini -- /u…"   jenkins-blueocean   4 minutes ago   Up 4 minutes   50000/tcp, 0.0.0.0:8081->8080/tcp
