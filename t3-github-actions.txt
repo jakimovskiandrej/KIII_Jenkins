@@ -1,0 +1,39 @@
+1. name: CI Workflow
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run shell command
+        run: ls -l
+
+2. No secrets were added to this repository.
+3. Workflow run status: SUCCESS
+Job: build
+Runner: ubuntu-latest
+Duration: (стави од GitHub Actions)
+
+Console output:
+Run ls -l
+total 20
+-rw-r--r-- 1 runner runner   404 Mar 28 07:24 docker-compose.yml
+-rw-r--r-- 1 runner runner 13723 Mar 28 07:24 t1-jenkins-setup.txt
+-rw-r--r-- 1 runner runner     0 Mar 28 07:24 t2-freestyle-project.txt
+
+4. Workflow run evidence:
+
+- Repository: KIII_Jenkins
+- Workflow: CI Workflow
+- Status: SUCCESS
+- Job: build
+- Runner: ubuntu-latest
+- Duration: 10s
